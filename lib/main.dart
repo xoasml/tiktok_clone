@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tictok_clone/screens/sign_up/sign_up_screen.dart';
 
 void main() {
   runApp(const TikTokApp());
@@ -14,8 +15,7 @@ class TikTokApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: const Color(0xFFE9435A)),
       ),
-      home: Container(),
+      home: SignUpScreen(),
     );
   }
 }
-

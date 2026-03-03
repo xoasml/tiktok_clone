@@ -1,7 +1,8 @@
-# tictok_cleon
-**`Flutter version 3.41.2`**  
+# toonfilx
 윈도우로 개발이 불가능 한 것은 아니지만  
 ios로 빌드 하려면 맥을 써야함.
+
+flutter version은 `.fvmrc` 파일에서 확인
 
 ## Getting Started
 
@@ -34,9 +35,11 @@ fvm use {version}
 
 ### 2. IDE 설정 (Android Studio / IntelliJ)
 1. Window : `File > Settings > Languages & Frameworks > Flutter`   
-   macOS : `Android Studio > Settings... > Languages & Frameworks > Flutter`) 로 이동합니다.
-2. Flutter SDK path 를 프로젝트 루트 아래의 .fvm/flutter_sdk 폴더로 변경합니다. (예: /Users/taehoon/Documents/Dev/bbgg/.fvm/flutter_sdk)
+   macOS : `Android Studio > Settings... > Languages & Frameworks > Flutter` 로 이동합니다.
+2. Flutter SDK path 를 프로젝트 루트 아래의 .fvm/flutter_sdk 폴더로 변경합니다. (예: /Users/taehoon/Documents/Dev/bbgg/.fvm/flutter_sdk)  
+   (.fvm이 파인더에서 안보인다면 숨김파일 보기 `command + shift + .`)
 3. Apply 와 OK를 클릭합니다.
+
 ### 3. .gitignore 파일에 .fvm 폴더 추가
 FVM이 관리하는 Flutter SDK는 용량이 크고,  
 다른 개발 환경에서는 각자 다시 설치해야 하므로 Git 버전 관리에서 제외  
