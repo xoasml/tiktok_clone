@@ -1,4 +1,4 @@
-# toonfilx
+# tiktok_clone
 윈도우로 개발이 불가능 한 것은 아니지만  
 ios로 빌드 하려면 맥을 써야함.
 

@@ -11,7 +11,7 @@ include: package:flutter_lints/flutter.yaml
 
 linter:
   rules:
-    prefer_const_constructors: true #const 추천
-    prefer_const_literals_to_create_immutables: true #const 추천
+#    prefer_const_constructors: true #const 추천
+#    prefer_const_literals_to_create_immutables: true #const 추천
 formatter:
   trailing_commas: preserve #, 을 이용한 포맷팅

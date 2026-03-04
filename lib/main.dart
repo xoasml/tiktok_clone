@@ -13,7 +13,11 @@ class TikTokApp extends StatelessWidget {
     return MaterialApp(
       title: 'TikTok Clone',
       theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: const Color(0xFFE9435A)),
+        colorScheme: .fromSeed(
+          seedColor: const Color(0xFFE9435A),
+          primary: const Color(0xFFE9435A),
+        ),
+        scaffoldBackgroundColor: Colors.white,
       ),
       home: SignUpScreen(),
     );
