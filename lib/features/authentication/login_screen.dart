@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:tictok_clone/constants/gaps.dart';
 import 'package:tictok_clone/constants/sizes.dart';
+import 'package:tictok_clone/features/authentication/sign_up_screen.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
+  void onSignUpPop(BuildContext context) {
+    Navigator.of(context).pop(
+      MaterialPageRoute(
+        builder: (context) => SignUpScreen(),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +24,7 @@ class SignUpScreen extends StatelessWidget {
             children: [
               Gaps.v80,
               Text(
-                'Sign up for TikTok',
+                'Log in to TikTok',
                 style: TextStyle(
                   fontSize: Sizes.size24,
                   fontWeight: FontWeight.w700,
@@ -23,7 +32,7 @@ class SignUpScreen extends StatelessWidget {
               ),
               Gaps.v20,
               Text(
-                'Create a profile, follow other accounts, make your own videos, and more.',
+                'Manage your account, check notifications, comment on videos, and more.',
                 style: TextStyle(
                   fontSize: Sizes.size16,
                   color: Colors.black45,
@@ -41,18 +50,21 @@ class SignUpScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Already have an account?',
+              "Don't have an account?",
               style: TextStyle(
                 fontSize: Sizes.size16,
               ),
             ),
             Gaps.h5,
-            Text(
-              'Log in',
-              style: TextStyle(
-                color: Theme.of(context).primaryColor,
-                fontWeight: FontWeight.w600,
-                fontSize: Sizes.size16,
+            GestureDetector(
+              onTap: () => onSignUpPop(context),
+              child: Text(
+                'Sign up',
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                  fontWeight: FontWeight.w600,
+                  fontSize: Sizes.size16,
+                ),
               ),
             ),
           ],
