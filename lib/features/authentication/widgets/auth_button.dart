@@ -5,40 +5,45 @@ import 'package:tictok_clone/constants/sizes.dart';
 class AuthButton extends StatelessWidget {
   final FaIcon icon;
   final String text;
+  final Function destination;
 
   const AuthButton({
     super.key,
     required this.icon,
     required this.text,
+    required this.destination,
   });
 
   @override
   Widget build(BuildContext context) {
-    return FractionallySizedBox(
-      widthFactor: 1,
-      child: Container(
-        padding: EdgeInsets.all(
-          Sizes.size14,
-        ),
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.grey.shade300,
-            width: Sizes.size1,
+    return GestureDetector(
+      onTap: () => destination,
+      child: FractionallySizedBox(
+        widthFactor: 1,
+        child: Container(
+          padding: EdgeInsets.all(
+            Sizes.size14,
           ),
-        ),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Align(alignment: Alignment.centerLeft, child: icon),
-            Text(
-              text,
-              style: TextStyle(
-                fontSize: Sizes.size16,
-                fontWeight: FontWeight.w500,
-              ),
-              textAlign: TextAlign.center,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.grey.shade300,
+              width: Sizes.size1,
             ),
-          ],
+          ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Align(alignment: Alignment.centerLeft, child: icon),
+              Text(
+                text,
+                style: TextStyle(
+                  fontSize: Sizes.size16,
+                  fontWeight: FontWeight.w500,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
         ),
       ),
     );
