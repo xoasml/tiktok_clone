@@ -5,19 +5,20 @@ import 'package:tictok_clone/constants/sizes.dart';
 class AuthButton extends StatelessWidget {
   final FaIcon icon;
   final String text;
-  final Function destination;
+  final VoidCallback onTop;
 
   const AuthButton({
     super.key,
     required this.icon,
     required this.text,
-    required this.destination,
+    required this.onTop,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => destination,
+      onTap: onTop,
+      behavior: HitTestBehavior.opaque,
       child: FractionallySizedBox(
         widthFactor: 1,
         child: Container(
