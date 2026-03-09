@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tictok_clone/constants/gaps.dart';
 import 'package:tictok_clone/constants/sizes.dart';
+import 'package:tictok_clone/features/authentication/email_screen.dart';
+import 'package:tictok_clone/features/authentication/widgets/form_button.dart';
 
 class UsernameScreen extends StatefulWidget {
   const UsernameScreen({super.key});
@@ -23,6 +25,22 @@ class _UsernameScreenState extends State<UsernameScreen> {
         _username = _usernameController.text;
       });
     });
+  }
+
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    super.dispose();
+  }
+
+  void _onNextTap() {
+    if (_username.isEmpty) return;
+
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => EmailScreen(),
+      ),
+    );
   }
 
   @override
@@ -66,27 +84,9 @@ class _UsernameScreenState extends State<UsernameScreen> {
               cursorColor: Theme.of(context).primaryColor,
             ),
             Gaps.v28,
-            FractionallySizedBox(
-              widthFactor: 1,
-              child: AnimatedContainer(
-                padding: EdgeInsets.symmetric(vertical: Sizes.size16),
-                decoration: BoxDecoration(
-                  color: _username.isEmpty
-                      ? Colors.grey.shade300
-                      : Theme.of(context).primaryColor,
-                  borderRadius: BorderRadius.circular(Sizes.size5),
-                ),
-                duration: Duration(milliseconds: 300),
-                child: Text(
-                  textAlign: TextAlign.center,
-                  'Next',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                    fontSize: Sizes.size16 + Sizes.size2,
-                  ),
-                ),
-              ),
+            GestureDetector(
+              onTap: _onNextTap,
+              child: FromButton(disabled: _username.isEmpty),
             ),
           ],
         ),
