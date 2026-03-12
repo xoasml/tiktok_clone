@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:tictok_clone/constants/sizes.dart';
 
-class FromButton extends StatelessWidget {
-  const FromButton({
+class FormButton extends StatelessWidget {
+  const FormButton({
     super.key,
     required this.disabled,
+    this.text = 'Next',
   });
 
   final bool disabled;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class FromButton extends StatelessWidget {
           duration: Duration(milliseconds: 300),
           child: Text(
             textAlign: TextAlign.center,
-            'Next',
+            text,
           ),
         ),
       ),

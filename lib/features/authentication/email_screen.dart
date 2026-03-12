@@ -105,7 +105,7 @@ class _EmailScreenState extends State<EmailScreen> {
               Gaps.v28,
               GestureDetector(
                 onTap: _onSubmit,
-                child: FromButton(
+                child: FormButton(
                   disabled: _email.isEmpty || _isEmailValid() != null,
                 ),
               ),
